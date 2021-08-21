@@ -1,0 +1,34 @@
+{
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "isr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarssanchez/isr-calculator.git"
+  },
+  "author": "oscarssanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oscarssanchez/isr-calculator/issues"
+  },
+  "homepage": "https://github.com/oscarssanchez/isr-calculator#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@webpack-cli/generators": "^2.3.0",
+    "babel-loader": "^8.2.2",
+    "prettier": "^2.3.2",
+    "sass": "^1.38.0",
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
