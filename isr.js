@@ -77,10 +77,11 @@ const getTaxesPerceptions = (annualIncome, year = 2021) => {
 const calculateAnnualISR = (annualIncome, year) => {
 	let taxBrackets;
 
-	if (2021 === year) {
-		taxBrackets = brackets2021();
-	} else if (2020 === year || 2019 === year) {
-		taxBrackets = brackets202019();
+	switch (year) {
+		case 2021 ||2022: taxBrackets = brackets2021to2022();
+		return;
+		case 2020 || 2019: taxBrackets = brackets2020To2019();
+		return;
 	}
 
 	const payerBracket = taxBrackets.find(element => annualIncome < element.limiteSuperior);
@@ -110,9 +111,9 @@ const calculateEffectiveTaxRate = (annualIncome, isr) => {
 }
 
 /**
- * Anual Tax brackets 2021
+ * Annual Tax brackets 2021
  */
-const brackets2021 = () => {
+const brackets2021to2022 = () => {
 	return [
 		{
 			"limiteinferior": 0.01,
@@ -184,9 +185,9 @@ const brackets2021 = () => {
 };
 
 /**
- * Anual Tax brackets 2019-2020
+ * Annual Tax brackets 2019-2020
  */
-const brackets202019 = () => {
+const brackets2020To2019 = () => {
 	return [
 		{
 			"limiteinferior": 0.01,
